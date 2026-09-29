@@ -1,9 +1,70 @@
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 class Program
 {
     static void Main(string[] args)
     {
+        Circle myCircle = new Circle();
+
+        myCircle._radius = 10;
+
+        double area = myCircle.GetArea();
+
+        Console.WriteLine(area);
+
+        Circle myCircle2 = new Circle();
+
+        myCircle2._radius = 10;
+
+        double area2 = myCircle2.GetArea();
+
+        Console.WriteLine(area);
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Program
+{
+    static double AddNumbers(double x, int y)
+    {
+        return x + y;
+    }
+    static string MyName()
+    {
+        return "Bob";
+    }
+    static void DisplayGreeting(string name)
+    {
+        Console.WriteLine($"Welcome {name}, its nice to meet you");
+    }
+
+    static void Main(string[] args)
+    {
+        string myName = MyName();
+        DisplayGreeting(myName);
+        double total = AddNumbers(12.234, 20);
+        Console.WriteLine(total);
         // int x = 10;
         // int y = 30;
         // int z = 40;
@@ -46,7 +107,7 @@ class Program
             Console.WriteLine(i);
         }
 
-        List<string> myFriends = new List<string> = {"Bob", "Betty", "Bubba"};
+        List<string> myFriends = new List<string>  {"Bob", "Betty", "Bubba"};
 
         myFriends.Add("Doug");
 
