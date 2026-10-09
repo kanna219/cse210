@@ -7,6 +7,9 @@ class Program
     {
         Menu myMenu = new Menu();
 
+        Journal myJournal = new Journal();
+
+
         int response = 0;
 
         while(response != 5)
@@ -15,20 +18,22 @@ class Program
             switch(response)
             {
                 case 1:
-                    Console.WriteLine("Create");
+                    myJournal.CreateEntry();
                     break;
-                    // Call CreateJournalEntry()
                 case 2:
-                    Console.WriteLine("Display");
+                    myJournal.DisplayJournal();
                     break;
-                    // Call DisplayJournal()
                 case 3:
-                    Console.WriteLine("Save");
+                    Console.Write("Enter file name to save: ");
+                    string saveFile = Console.ReadLine();
+                    myJournal.WriteToFile(saveFile);
+                    Console.WriteLine("Journal saved.");
                     break;
-                    // Call readFromFile()
                 case 4:
-                    Console.WriteLine("Write");
-                    // Call WriteToFile()
+                    Console.Write("Enter filename to load: ");
+                    string loadFile = Console.ReadLine();
+                    myJournal.ReadFromFile(loadFile);
+                    Console.WriteLine("Journal loaded.");
                     break;
 
             }
