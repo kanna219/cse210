@@ -44,10 +44,11 @@ class Journal
             string date = parts[0];
             string question = parts[1];
             string entryText = parts[2];
+            string mood = parts[3];
 
             JournalEntry entry = new JournalEntry();
 
-            entry.CreateJournalEntry(date, question, entryText);
+            entry.CreateJournalEntry(date, question, entryText, mood);
 
             _entries.Add(entry);
         }

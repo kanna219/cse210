@@ -28,12 +28,14 @@ class Program
                     string saveFile = Console.ReadLine();
                     myJournal.WriteToFile(saveFile);
                     Console.WriteLine("Journal saved.");
+                    Console.WriteLine("");
                     break;
                 case 4:
                     Console.Write("Enter filename to load: ");
                     string loadFile = Console.ReadLine();
                     myJournal.ReadFromFile(loadFile);
                     Console.WriteLine("Journal loaded.");
+                    Console.WriteLine("");
                     break;
 
             }
@@ -41,3 +43,9 @@ class Program
         
     }
 }
+
+
+// Creativity feature: I added writing hints and mood tracking.
+// Writing hints help users think of ideas for journal entries.
+// Mood tracking lets users record how they felt that day.
+
