@@ -20,7 +20,12 @@ class JournalEntry
             "What was the best part of my day?",
             "How did I see the hand of the Lord in my life today?",
             "What was the strongest emotion I felt today?",
-            "If I had one thing I could do over today, what would it be?"
+            "If I had one thing I could do over today, what would it be?",
+            "What is one thing I learned today?", // I added my own questions from here
+            "What is one small thing that made you happy?",
+            "What is one thing that made your day special? ",
+            "What did you eat for dinner?",
+            "What did you eat for lunch?"
         ];
 
         Random random = new Random();
