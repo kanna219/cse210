@@ -1,9 +1,12 @@
+using System.IO; 
 class Journal
 {
     public List<JournalEntry> _entries = new List<JournalEntry>();
  
     public void DisplayJournal()
     {
+        Console.WriteLine($"You have {_entries.Count} journal entries.");
+
         foreach (JournalEntry entry in _entries)
         {
             entry.DisplayJournalEntry();
