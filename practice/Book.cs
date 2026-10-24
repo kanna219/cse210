@@ -1,14 +1,30 @@
 using System;
-
-class Book
+using System.IO.Pipes;
+class GameCharacter
 {
-    string _title;
-    string _author;
-    string _pages;
-
-     void DisplayInfo()
+    private string name;
+    private int hp;
+    public GameCharacter(string characterName, int charcterHp)
     {
-        Console.WriteLine($"{_title} {_author} {_pages}");
+        name = characterName;
+        hp = characterHp;
     }
 
+    public string GetName()
+    {
+        return name;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        if (hp > 0)
+        {
+            hp -= damage;
+        }
+    }
+
+    public void DisplayInfo()
+    {
+        Console.WriteLine($"Name: {name}, HP: {hp}");
+    }
 }
