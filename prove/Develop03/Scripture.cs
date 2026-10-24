@@ -30,12 +30,25 @@ class Scripture
     public void HideSomeWords()
     {
         Random random = new Random();
-        for (int i = 0; i < 3; i++)
+
+        List<Word> visibleWords = new List<Word>();
+
+        foreach (Word word in _words)
         {
-            int index = random.Next(0, _words.Count);
-            _words[index].Hide();
+            if (!word.IsHidden())
+            {
+                visibleWords.Add(word);
+            }
         }
 
+        for (int i = 0; i < 3 && visibleWords.Count > 0; i++)
+        {
+            int index = random.Next(0, visibleWords.Count);
+
+            visibleWords[index].Hide();
+
+            visibleWords.RemoveAt(index);
+        }
     }
     public void ShowScripture()
     {
