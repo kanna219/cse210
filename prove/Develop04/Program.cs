@@ -44,3 +44,9 @@ class Program
         }
     }
 }
+
+// Creativity and Exceeding Requirements:
+// I added a feature that prevents random prompts and questions
+// from repeating until all of them have been used at least once.
+// After all prompts or questions have been used, the program
+// resets them so they can be selected again.
