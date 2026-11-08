@@ -19,6 +19,7 @@ class ReflectionActivity : BaseActivity
     {
         StartActivity();
 
+        Console.WriteLine();
         Console.WriteLine("Consider the following prompt:");
         Console.WriteLine();
 
@@ -26,16 +27,20 @@ class ReflectionActivity : BaseActivity
 
         Console.WriteLine($"--- {prompt} ---");
 
-        RunCountDownMessage("You may begin in", 5);
+        Console.WriteLine();
+        Console.WriteLine("When you have something in mind, press Enter to continue.");
+        Console.ReadLine();
+
+        RunCountDownMessage("You may begin in: ", 5);
 
         while (!HasTimerExpired())
         {
             string question = GetPromptString(_questions);
 
             Console.WriteLine();
-            Console.WriteLine(question);
+            RunSpinnerMessage(question, 10);
 
-            RunSpinnerMessage("Think about it...", 8);
+           
         }
 
         DisplayEnding();
@@ -76,4 +81,3 @@ class ReflectionActivity : BaseActivity
         }
     }
 }
-

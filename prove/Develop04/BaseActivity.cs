@@ -15,21 +15,20 @@ class BaseActivity
 
     public void StartActivity()
     {
-        Console.WriteLine($"Welcome to the {_name} activity.");
+        Console.WriteLine($"Welcome to the {_name} Activity.");
         Console.WriteLine();
         Console.WriteLine(_description);
         Console.WriteLine();
 
         ObtainDuration();
 
-        Console.WriteLine("Get ready...");
-        RunCountDownMessage("Starting in", 5);
+        RunSpinnerMessage("Get ready... ", 5);
         StartTimer();
     }
 
     public void ObtainDuration()
     {
-        Console.WriteLine("How long, in seconds, would you like for your session? ");
+        Console.Write("How long, in seconds, would you like for your session? ");
         _duration = int.Parse(Console.ReadLine());
     }
     public void StartTimer()
@@ -57,6 +56,7 @@ class BaseActivity
 
     public void RunSpinnerMessage(string message, int seconds)
     {
+        Console.Clear();
         Console.Write(message); 
         Console.CursorVisible = false;
         DateTime now = DateTime.Now;
@@ -80,12 +80,8 @@ class BaseActivity
     public void DisplayEnding()
     {
         Console.WriteLine();
-        Console.WriteLine("Good job!");
-        Console.WriteLine($"You have completed the {_name} activity.");
-        RunSpinnerMessage(" ", 3);
-
-        Console.WriteLine($"You have completed {_name} for {_duration} seconds.");
-        RunSpinnerMessage("Well done!", 3);
+        RunSpinnerMessage("Good job!", 3);
+        RunSpinnerMessage($"You have completed {_name} for {_duration} seconds.", 3);
     }
 
     public string GetPromptString(List<FlaggedString> prompts)
