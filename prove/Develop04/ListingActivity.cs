@@ -24,30 +24,32 @@ class ListingActivity : BaseActivity
 
         Console.WriteLine($"--- {prompt} ---");
 
-        RunCountDownMessage("You may begin in", 5);
+        RunCountDownMessage("You may begin in", 5, false);
 
         List<string> responses = new List<string>();
 
+        int count = 0;
         while (!HasTimerExpired())
         {
             Console.Write("> ");
 
             string response = Console.ReadLine();
 
-            if (!HasTimerExpired() && !string.IsNullOrWhiteSpace(response))
+            if (!string.IsNullOrWhiteSpace(response))
             {
                 responses.Add(response);
+                count++;
             }
         }
 
         Console.WriteLine();
-        if (responses.Count == 1)
+        if (count == 1)
         {
             Console.WriteLine("You listed 1 item!");
         }
         else
         {
-            Console.WriteLine($"You listed {responses.Count} items!");
+            Console.WriteLine($"You listed {count} items!");
         }
 
         DisplayEnding();

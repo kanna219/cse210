@@ -31,7 +31,7 @@ class ReflectionActivity : BaseActivity
         Console.WriteLine("When you have something in mind, press Enter to continue.");
         Console.ReadLine();
 
-        RunCountDownMessage("You may begin in: ", 5);
+        RunCountDownMessage("You may begin in", 5);
 
         while (!HasTimerExpired())
         {

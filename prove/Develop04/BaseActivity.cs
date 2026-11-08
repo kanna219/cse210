@@ -41,28 +41,37 @@ class BaseActivity
         return DateTime.Now > _endTime;
     }
 
-    public void RunCountDownMessage(string message, int seconds)
+    public void RunCountDownMessage(string message, int seconds, bool clearScreen = true)
     {
         Console.CursorVisible = false;
-        for(int i = seconds; i>0; i--)
+
+        for (int i = seconds; i > 0; i--)
         {
-            Console.Clear();
-            Console.WriteLine($"{message} - {i}");
+            if (clearScreen)
+            {
+                Console.Clear();
+            }
+
+            Console.Write($"\r{message}: {i}   ");
             Thread.Sleep(1000);
         }
+
         Console.CursorVisible = true;
         Console.WriteLine();
     }
 
-    public void RunSpinnerMessage(string message, int seconds)
+    public void RunSpinnerMessage(string message, int seconds, bool clearScreen = true)
     {
-        Console.Clear();
-        Console.Write(message); 
-        Console.CursorVisible = false;
-        DateTime now = DateTime.Now;
-        DateTime endTime = now.AddSeconds(seconds);
+        if (clearScreen)
+        {
+            Console.Clear();
+        }
 
-        // for(int i=0; i < seconds; i++)
+        Console.Write(message);
+        Console.CursorVisible = false;
+
+        DateTime endTime = DateTime.Now.AddSeconds(seconds);
+
         while (DateTime.Now < endTime)
         {
             Console.Write("+");
@@ -72,16 +81,19 @@ class BaseActivity
             Thread.Sleep(200);
             Console.Write("\b");
         }
+
         Console.CursorVisible = true;
         Console.WriteLine();
-
     }
 
     public void DisplayEnding()
     {
         Console.WriteLine();
-        RunSpinnerMessage("Good job!", 3);
-        RunSpinnerMessage($"You have completed {_name} for {_duration} seconds.", 3);
+        Console.WriteLine("Well done!");
+        RunSpinnerMessage("", 3, false);
+
+        Console.WriteLine($"You have completed {_name} for {_duration} seconds.");
+        RunSpinnerMessage("", 3, false);
     }
 
     public string GetPromptString(List<FlaggedString> prompts)
