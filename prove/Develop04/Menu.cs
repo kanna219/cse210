@@ -2,8 +2,10 @@ using System;
 
 class Menu
 {
+    
     public int DisplayMenu()
     {
+        
         Console.WriteLine("Menu Options:");
         Console.WriteLine("  1. Start breathing activity");
         Console.WriteLine("  2. Start reflection activity");
