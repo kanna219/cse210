@@ -1,46 +1,22 @@
+using System.Drawing;
+using System.Reflection.Metadata;
 using System.Security.Cryptography;
 
 class Program
 {
-    public static void Main()
+    static void Main(string[] args)
     {
-        Person myPerson = new Person("John", "Smith", 25, 150.0);
-        Console.WriteLine(myPerson.GetPersonInformation());
+        List<Shape> shapes = new List<Shape>();
 
-        Doctor myDoctor = new Doctor("Bob", "Payne", 45, 180.0, "Stethoscope");
-        Console.WriteLine(myDoctor.GetdoctorInformation());
+        Circle s1 = new Circle("Green", 6);
+        Rectangle s2 = new Rectangle("Blue", 4, 5);
 
-        Police myPolice = new Police("Gary", "Goodman", 30, 180.0, "Gun");
-        Console.WritrLine(myPolice.GetPoliceInformation());
+        shapes.Add(s1);
+        shapes.Add(s2);
 
-        Nurse myNurse = new Nurse("Sarah", "Johnson", 32, 130.0, "Emergency");
-        Console.WriteLine(myNurse.GetNurseInformation());
-
-        List<Person> myPeople = new List<Person>();
-        myPeople.Add(myPerson);
-        myPeople.Add(myPolice);
-        myPeople.Add(myDoctor);
-        myPeople.Add(myNurse);
-
-        foreach (Person person in myPeopel)
+        foreach (Shape shape in shapes)
         {
-            if (person is Doctor doctor)
-            {
-                Console.WriteLine(doctor.GetDoctorInformation());
-            }
-            else if (person is Police police)
-            {
-                Console.WriteLine(police.GetPoliceInforamtion());
-            }
-            else if (person is Nurse nurse)
-            {
-                Console.WriteLine(nurse.GetNurseInformation());
-            }
-            else
-            {
-                Console.WriteLine(person.GetPersonInformation());
-            }
+            Console.WriteLine($"The {shape.GetColor()} has an area of {shape.GetArea()}.");
         }
-
     }
 }

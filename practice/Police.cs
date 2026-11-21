@@ -1,17 +1,4 @@
-using System.Security.Cryptography;
-
-class Police : Person
+class Dog : Animal
 {
-    private string _weapons;
-
-    public Police(string firstName, string lastName, int age, double weight, string weapons)
-    : base(firstName, lastName, age, weight)
-    {
-        _weapons = weapons;
-    }
-
-    public string GetPoliceInformation()
-    {
-        return $"Police: Weapons: {_weapons}: {GetPersonInformation()}";
-    }
+    
 }
