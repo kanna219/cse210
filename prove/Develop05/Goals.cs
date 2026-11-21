@@ -28,7 +28,9 @@ class Goals
 
     public void DisplayScore()
     {
+        int level = (_totalScore / 1000) + 1;
         Console.WriteLine($"You have {_totalScore} points.");
+        Console.WriteLine($"Your current level is {level}.");
     }
 
     public void RecordEvent()

@@ -56,3 +56,6 @@ class Program
         }
     }
 }
+
+// Creativity: I added a leveling system.
+// The user's level increases whenever the user earns another 1,000 points.
